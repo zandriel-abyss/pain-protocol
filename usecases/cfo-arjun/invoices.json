@@ -1,0 +1,24 @@
+[
+    {
+      "invoice_id": "INV001",
+      "vendor": "EuroMed Supplies",
+      "currency": "EUR",
+      "amount": 15000,
+      "due_in_days": 2
+    },
+    {
+      "invoice_id": "INV002",
+      "vendor": "AsiaTech Imports",
+      "currency": "USD",
+      "amount": 22000,
+      "due_in_days": 5
+    },
+    {
+      "invoice_id": "INV003",
+      "vendor": "Global Freight Co.",
+      "currency": "GBP",
+      "amount": 8500,
+      "due_in_days": 1
+    }
+  ]
+  

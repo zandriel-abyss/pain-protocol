@@ -1,0 +1,22 @@
+[
+  {
+    "flow": "freelancer_income",
+    "type": "conversion",
+    "recipient": "Aisha",
+    "amount": 560.0,
+    "route": "Best route: USDT \u2192 ePHP via Agent",
+    "rail": "stablecoin or fiat",
+    "timestamp": "2025-04-11T12:31:36.182735+00:00Z",
+    "status": "delivered"
+  },
+  {
+    "flow": "freelancer_income",
+    "type": "savings",
+    "recipient": "Aisha",
+    "amount": 240.0,
+    "route": "USDC \u2192 PAIN Wallet (multi-currency)",
+    "rail": "stablecoin",
+    "timestamp": "2025-04-11T12:31:36.183959+00:00Z",
+    "status": "delivered"
+  }
+]

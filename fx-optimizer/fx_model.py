@@ -6,7 +6,7 @@ def predict_fx_timing(currency_pair: str, amount: float, urgency: str) -> str:
     """
     Suggests whether to send now or wait based on urgency and mock FX prediction.
     """
-    print(f"🔍 Checking FX trend for {currency_pair} and amount ${amount}...")
+    print(f"Checking FX trend for {currency_pair} and amount ${amount}...")
 
     # Mocked logic: urgency + random signal
     fx_signal = random.choice(["up", "down"])
