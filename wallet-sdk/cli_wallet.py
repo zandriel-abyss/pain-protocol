@@ -3,45 +3,43 @@
 import sys
 import os
 
-# Allow import from fx-optimizer folder
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), r'C:\Users\jzack\ML Projects\pain-protocol\fx-optimizer')))
-from fx_model import predict_fx_timing
-# add at the top
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), r'C:\Users\jzack\ML Projects\pain-protocol\routing-engine')))
-from router import choose_payment_route
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), r"C:\Users\jzack\ML Projects\pain-protocol"))
+sys.path.append(os.path.join(ROOT_DIR, "payment-rails"))
+sys.path.append(os.path.join(ROOT_DIR, "compliance-engine"))
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), r'C:\Users\jzack\ML Projects\pain-protocol\payment-rails')))
-from mock_delivery import simulate_fund_delivery
+from did_checker import validate_did_compliance
 
 
-def run_wallet_interface():
-    print("Welcome to PAIN Wallet (CLI)")
-    
-    # Step 1: Get user inputs
-    try:
-        amount = float(input("Enter the amount to send (e.g. 200): "))
-        currency_pair = input("Enter the currency pair (e.g. USD/PHP): ").strip().upper()
-        urgency = input("Urgency (high / medium / low): ").strip().lower()
-    except Exception as e:
-        print("Invalid input. Please try again.")
+def wallet_interface():
+    print("Welcome to PAIN CLI Wallet")
+
+    did = input("🔐 Enter your DID (e.g., 'tunde'): ").strip()
+    required_tags = ["kyc_passed"]  # Base level compliance
+
+    print(f"\nValidating DID {did}...")
+    is_valid, msg = validate_did_compliance(did, required_tags)
+
+    if not is_valid:
+        print(f"❌ Access denied: {msg}")
         return
 
-    # Step 2: Call FX Engine
-    print("\nProcessing your transfer...")
-    advice = predict_fx_timing(currency_pair, amount, urgency)
+    print("✅ Identity validated. You may now access payment tools.\n")
 
-    # Step 3: Output FX suggestion
-    print(f"\n PAIN FX Advice: {advice}")
+    # Example options
+    print("Available actions:")
+    print("1. Send Money (remittance)")
+    print("2. Redeem Voucher")
+    print("(More features coming soon...)\n")
 
-    # Step 4: Choose routing
-    route = choose_payment_route(amount, currency_pair.split("/")[-1], advice)
-    print(f" Routing Decision: {route}")
+    action = input("Select an action (1 or 2): ").strip()
 
-    # Step 5: Simulate fund delivery
-    delivery_result = simulate_fund_delivery(route, amount)
-    print(f"\n Delivery Status: {delivery_result}")
+    if action == "1":
+        print("🔁 Redirecting to remittance flow (to be implemented)...")
+    elif action == "2":
+        print(f"🎫 Checking voucher eligibility for {did}... (launch run_tunde_flow or similar flow)\n")
+    else:
+        print("❓ Invalid selection")
 
 
-# Run the CLI
 if __name__ == "__main__":
-    run_wallet_interface()
+    wallet_interface()

@@ -1,31 +1,36 @@
-# Goal:Build a function that:Takes currency_pair, amount, and urgency; Returns a suggestion: "Send now" OR "Wait 2 hours" (based on a basic rule or random logic)
 # fx-optimizer/fx_model.py
-import random
 
-def predict_fx_timing(currency_pair: str, amount: float, urgency: str) -> str:
-    """
-    Suggests whether to send now or wait based on urgency and mock FX prediction.
-    """
-    print(f"Checking FX trend for {currency_pair} and amount ${amount}...")
+from data_sources import get_fx_data
 
-    # Mocked logic: urgency + random signal
-    fx_signal = random.choice(["up", "down"])
-    
-    if urgency == "high":
-        return "Send now (urgency is high)"
-    elif fx_signal == "up":
-        return "Wait 2 hours – expected gain in exchange rate"
+def determine_trend(fx_data):
+    delta = fx_data["current"] - fx_data["1hr_ago"]
+    if delta > 0.05:
+        return "up"
+    elif delta < -0.05:
+        return "down"
     else:
-        return "Send now – rate may drop later"
+        return "flat"
 
-# For test run
+def predict_fx_timing(currency_pair: str, amount: float, urgency: str, source="mock") -> str:
+    print(f"Checking FX for {currency_pair}, amount ${amount}, urgency: {urgency} (source: {source})")
+
+    fx_data = get_fx_data(currency_pair, source)
+    trend = determine_trend(fx_data)
+    volatility = fx_data["volatility"]
+
+    print(f"Current Rate: {fx_data['current']} | 1hr Ago: {fx_data['1hr_ago']} | Δ: {trend} | Volatility: {volatility}")
+
+    # Decision logic
+    if urgency == "high":
+        return "Send now (high urgency)"
+    elif trend == "up" and volatility < 1.0:
+        return "Wait 2 hours – expected gain in exchange rate"
+    elif trend == "down" or volatility > 2.0:
+        return "Send now – market is volatile"
+    else:
+        return "Send now – minimal expected change"
+
+# Test run
 if __name__ == "__main__":
-    suggestion = predict_fx_timing("USD/PHP", 200, "low")
-    print(f"Suggestion: {suggestion}")
-
-
-# import random	We'll use this to simulate FX trends (up/down)
-# def predict_fx_timing(...)	This function takes in key values Maria provides
-# fx_signal = random.choice(...)	Randomly simulates if rate is improving or worsening
-# Logic block	Combines user urgency and mock FX to decide
-# __main__	Lets you run this script directly to test it
+    result = predict_fx_timing("USD/PHP", 200, "low", source="mock")
+    print(f"Suggestion: {result}")

@@ -26,7 +26,7 @@ def simulate_cbdc_delivery(sender_country, receiver_country, amount, route, reci
     return receipt
 
 def anchor_log(data, filename="anchored_receipts.json"):
-    path = "logs"
+    path = r"C:\Users\jzack\ML Projects\pain-protocol\logs"
     os.makedirs(path, exist_ok=True)
     file_path = os.path.join(path, filename)
 

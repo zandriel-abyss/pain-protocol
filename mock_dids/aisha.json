@@ -1,0 +1,21 @@
+{
+    "did": "aisha",
+    "status": "verified",
+    "tags": ["kyc_passed", "freelancer_verified"],
+    "issued_at": "2025-04-22T16:30:00Z",
+    "issuer": "Global Freelance Registry",
+    "vc": {
+      "claim": {
+        "name": "Aisha Freelancer",
+        "profession": "Web Developer",
+        "residency": "NG",
+        "eligible_for": ["fx_advice", "wallet_savings"]
+      },
+      "proof": {
+        "type": "MockSignature2025",
+        "created": "2025-04-22T16:31:00Z",
+        "proofPurpose": "assertionMethod"
+      }
+    }
+  }
+  

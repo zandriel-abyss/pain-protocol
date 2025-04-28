@@ -44,7 +44,7 @@ def simulate_split_payout(convert_amount, save_amount, convert_route, save_route
     return convert_receipt, save_receipt
 
 def anchor_log(data, filename="anchored_receipts.json"):
-    path = "logs"
+    path = r"C:\Users\jzack\ML Projects\pain-protocol\logs"
     os.makedirs(path, exist_ok=True)
     file_path = os.path.join(path, filename)
 

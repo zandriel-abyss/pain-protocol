@@ -1,12 +1,51 @@
 [
   {
+    "user_did": "arjun",
+    "currency_pair": "EUR/INR",
+    "amount": 10000,
+    "urgency": "medium",
+    "fx_advice": "Send now \u2013 minimal expected change",
+    "timestamp": "2025-04-22T18:41:53.856642Z",
+    "usecase": "treasury_fx_decision"
+  },
+  {
+    "flow": "freelancer_income",
+    "type": "conversion",
+    "recipient": "Aisha",
+    "amount": 624.0,
+    "route": "Best route: eAED \u2192 Cash Agent Pickup",
+    "rail": "stablecoin or fiat",
+    "timestamp": "2025-04-22T18:45:36.641283+00:00Z",
+    "status": "delivered"
+  },
+  {
+    "flow": "freelancer_income",
+    "type": "savings",
+    "recipient": "Aisha",
+    "amount": 176.0,
+    "route": "USDC \u2192 PAIN Wallet (multi-currency)",
+    "rail": "stablecoin",
+    "timestamp": "2025-04-22T18:45:36.642294+00:00Z",
+    "status": "delivered"
+  },
+  {
+    "user_did": "aisha",
+    "type": "freelancer_payout",
+    "convert_amount": 560.0,
+    "convert_route": "Best route: USDC \u2192 Bank PH",
+    "save_amount": 240.0,
+    "save_route": "USDC \u2192 PAIN Wallet (multi-currency)",
+    "fx_advice": "Send now \u2013 market i s volatile",
+    "timestamp": "2025-04-22T19:03:37.339345Z"
+  },
+  {
     "flow": "freelancer_income",
     "type": "conversion",
     "recipient": "Aisha",
     "amount": 560.0,
-    "route": "Best route: USDT \u2192 ePHP via Agent",
+    "route": "Best route: USDC \u2192 Bank PH",
     "rail": "stablecoin or fiat",
-    "timestamp": "2025-04-11T12:31:36.182735+00:00Z",
+    "timestamp": "2025-04-22T19:03:37.344452+00:00Z",
     "status": "delivered"
   },
   {
@@ -16,7 +55,83 @@
     "amount": 240.0,
     "route": "USDC \u2192 PAIN Wallet (multi-currency)",
     "rail": "stablecoin",
-    "timestamp": "2025-04-11T12:31:36.183959+00:00Z",
+    "timestamp": "2025-04-22T19:03:37.345448+00:00Z",
+    "status": "delivered"
+  },
+  {
+    "from_country": "UAE",
+    "to_country": "Philippines",
+    "amount": 200,
+    "route": "CBDC Rail: eAED \u2192 ePHP",
+    "recipient": "Maria's Mom",
+    "rail": "CBDC",
+    "timestamp": "2025-04-28T12:50:33.825058+00:00Z",
+    "status": "delivered"
+  },
+  {
+    "sender_country": "UAE",
+    "receiver_country": "Philippines",
+    "currency_pair": "USD/PHP",
+    "amount": 200,
+    "urgency": "low",
+    "fx_advice": "Wait 2 hours \u2013 expected gain in exchange rate",
+    "route_selected": "CBDC Rail: eAED \u2192 ePHP",
+    "fallback_used": false,
+    "rail_type": "CBDC",
+    "timestamp": "2025-04-28T12:50:33.825058Z",
+    "status": "Delivered"
+  },
+  {
+    "from_country": "UAE",
+    "to_country": "Philippines",
+    "amount": 200,
+    "route": "CBDC Rail: eAED \u2192 ePHP",
+    "recipient": "Maria's Mom",
+    "rail": "CBDC",
+    "timestamp": "2025-04-28T22:38:30.444191+00:00Z",
+    "status": "delivered"
+  },
+  {
+    "sender_country": "UAE",
+    "receiver_country": "Philippines",
+    "currency_pair": "USD/PHP",
+    "amount": 200,
+    "urgency": "low",
+    "fx_advice": "Wait 2 hours \u2013 expected gain in exchange rate",
+    "route_selected": "CBDC Rail: eAED \u2192 ePHP",
+    "fallback_used": false,
+    "rail_type": "CBDC",
+    "timestamp": "2025-04-28T22:38:30.444191Z",
+    "status": "Delivered"
+  },
+  {
+    "user_did": "aisha",
+    "type": "freelancer_payout",
+    "convert_amount": 560.0,
+    "convert_route": "Stablecoin Rail: USDC \u2192 Naira Agent",
+    "save_amount": 240.0,
+    "save_route": "USDC \u2192 PAIN Wallet (multi-currency)",
+    "fx_advice": "Send now \u2013 market is volatile",
+    "timestamp": "2025-04-28T22:38:50.901990Z"
+  },
+  {
+    "flow": "freelancer_income",
+    "type": "conversion",
+    "recipient": "Aisha",
+    "amount": 560.0,
+    "route": "Stablecoin Rail: USDC \u2192 Naira Agent",
+    "rail": "stablecoin or fiat",
+    "timestamp": "2025-04-28T22:38:50.937248+00:00Z",
+    "status": "delivered"
+  },
+  {
+    "flow": "freelancer_income",
+    "type": "savings",
+    "recipient": "Aisha",
+    "amount": 240.0,
+    "route": "USDC \u2192 PAIN Wallet (multi-currency)",
+    "rail": "stablecoin",
+    "timestamp": "2025-04-28T22:38:50.938245+00:00Z",
     "status": "delivered"
   }
 ]

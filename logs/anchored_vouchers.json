@@ -1,0 +1,18 @@
+[
+  {
+    "recipient": "tunde",
+    "amount": 75,
+    "allowed_categories": [
+      "education"
+    ],
+    "issued_at": "2025-04-22T18:43:43.597368Z",
+    "expires_at": "2025-04-29T18:43:43.597368Z",
+    "status": "redeemed",
+    "rail": "CBDC",
+    "metadata": {
+      "purpose": "education",
+      "notes": "Programmatic CBDC voucher"
+    },
+    "redeemed_at": "2025-04-22T18:43:43.625474Z"
+  }
+]

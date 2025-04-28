@@ -1,0 +1,20 @@
+{
+    "did": "tunde",
+    "status": "verified",
+    "tags": ["kyc_passed", "g2p_eligible", "voucher_enabled"],
+    "issued_at": "2025-04-22T12:00:00Z",
+    "issuer": "NGO Validator",
+    "vc": {
+      "claim": {
+        "name": "Tunde Beneficiary",
+        "country": "NG",
+        "eligible_for": ["education", "health"],
+        "expiry": "2026-01-01"
+      },
+      "proof": {
+        "type": "MockSignature2025",
+        "created": "2025-04-22T12:01:00Z",
+        "proofPurpose": "assertionMethod"
+      }
+    }
+  }  

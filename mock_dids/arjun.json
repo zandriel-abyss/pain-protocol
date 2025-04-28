@@ -1,0 +1,21 @@
+{
+    "did": "arjun",
+    "status": "verified",
+    "tags": ["kyc_passed", "enterprise_access"],
+    "issued_at": "2025-04-22T15:00:00Z",
+    "issuer": "Global Treasury Authority",
+    "vc": {
+      "claim": {
+        "name": "Arjun CFO",
+        "company": "Altura Tech",
+        "role": "Treasury Manager",
+        "eligibility": ["fx_advice", "multi_currency_routing"]
+      },
+      "proof": {
+        "type": "MockSignature2025",
+        "created": "2025-04-22T15:01:00Z",
+        "proofPurpose": "assertionMethod"
+      }
+    }
+  }
+  
