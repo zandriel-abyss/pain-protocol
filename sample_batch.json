@@ -1,0 +1,31 @@
+[
+    {
+      "name": "Anna", 
+      "receiver_country": "PH", 
+      "amount": 120, 
+      "urgency": "medium", 
+      "currency_pair": "USD/PHP"
+    },
+    {
+      "name": "Jamal", 
+      "receiver_country": "NG", 
+      "amount": 200, 
+      "urgency": "high", 
+      "currency_pair": "USD/NGN"
+    },
+    {
+      "name": "Luca", 
+      "receiver_country": "SG", 
+      "amount": 180, 
+      "urgency": "low", 
+      "currency_pair": "EUR/SGD"
+    },
+    {
+      "name": "Tunde", 
+      "receiver_country": "NG", 
+      "amount": 100, 
+      "urgency": "medium", 
+      "currency_pair": "USD/NGN"
+    }
+  ]
+  

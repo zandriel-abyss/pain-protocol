@@ -1,0 +1,38 @@
+# payment-rails/simulate_api_bridge.py
+
+from datetime import datetime
+import random
+
+# Mock function to simulate an API-style bridge transfer (e.g., SEPA, Circle CCTP, mBridge)
+
+def simulate_api_bridge_transfer(bridge_name, sender_country, receiver_country, amount, asset="USDC"):
+    print(f"\n Simulating {bridge_name} API Bridge Transfer")
+    print(f"From: {sender_country} → To: {receiver_country} | Amount: {amount} {asset}")
+
+    latency = round(random.uniform(0.3, 2.0), 2)  # simulate API delay
+    success = random.random() > 0.05  # 95% success rate for stable bridges
+
+    if success:
+        print(f"Transfer successful via {bridge_name} | Latency: {latency}s")
+        status = "delivered"
+    else:
+        print(f"Transfer failed via {bridge_name} | Latency: {latency}s")
+        status = "failed"
+
+    return {
+        "bridge": bridge_name,
+        "from": sender_country,
+        "to": receiver_country,
+        "amount": amount,
+        "asset": asset,
+        "latency_sec": latency,
+        "status": status,
+        "timestamp": datetime.utcnow().isoformat() + "Z"
+    }
+
+
+# CLI test
+if __name__ == "__main__":
+    tx = simulate_api_bridge_transfer("Circle_CCTP", "UAE", "Philippines", 150, asset="USDC")
+    print("\nBridge Receipt:")
+    print(tx)
