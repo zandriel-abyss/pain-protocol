@@ -6,7 +6,7 @@ import json
 from datetime import datetime
 
 # Add root and routing-engine path
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), r"C:\\Users\\jzack\\ML Projects\\pain-protocol"))
 sys.path.append(os.path.join(ROOT_DIR, "routing-engine"))
 sys.path.append(os.path.join(ROOT_DIR, "payment-rails"))
 
